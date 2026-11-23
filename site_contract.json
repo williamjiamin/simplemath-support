@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "description": "Offline contract for a four-page support website; claims are checked as text, not verified against the app binary.",
+  "entrypoint": "index.html",
+  "canonical_routes": [
+    "index.html",
+    "support.html",
+    "privacy-policy.html",
+    "terms-of-use.html"
+  ],
+  "required_direct_links": {
+    "index.html": ["support.html", "privacy-policy.html", "terms-of-use.html"],
+    "support.html": ["privacy-policy.html", "terms-of-use.html"]
+  },
+  "contact_routes": ["support.html", "privacy-policy.html", "terms-of-use.html"],
+  "required_claims": {
+    "index.html": {
+      "no_ads": "No ads",
+      "no_accounts": "No accounts",
+      "no_tracking": "No tracking",
+      "local_progress": "Learning progress stays on the device",
+      "adult_gate": "in-app adult math check"
+    },
+    "support.html": {
+      "local_progress": "Progress is stored on the device",
+      "no_accounts": "does not require an account",
+      "offline_learning": "learning features work offline",
+      "privacy_contact_advice": "Please do not include a learner's full name"
+    },
+    "privacy-policy.html": {
+      "local_progress": "on the device only",
+      "no_collection": "We do not collect, sell, share, or track personal data",
+      "no_ads_analytics_accounts": "We do not use advertising, third-party analytics, or accounts",
+      "no_learning_network": "We do not make network requests as part of the App's learning experience",
+      "adult_store_exception": "only when a parent chooses to load, restore, buy, or manage a purchase",
+      "child_information": "we do not knowingly collect personal information from children"
+    },
+    "terms-of-use.html": {
+      "no_accounts": "does not require an account",
+      "no_ads_analytics_accounts_tracking": "does not use advertising, analytics, accounts, or tracking",
+      "local_progress": "on the device",
+      "adult_gate": "shown only after the in-app parent gate"
+    }
+  },
+  "required_privacy_policy_concepts": [
+    "no_collection",
+    "no_ads_analytics_accounts",
+    "local_progress",
+    "no_learning_network",
+    "adult_store_exception",
+    "child_information"
+  ]
+}
